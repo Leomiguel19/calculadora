@@ -1,5 +1,9 @@
-// importacion
+import React from 'react'
 
-// Generacion de la función del componente
-
+// Función flecha o Arrow Function
+const App = () => {
+  // Lo que ejecuta la función
+  return <h1> Hola Mundo!!! </h1>
+}
 // Exportación
+export default App;

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-// Importar el componente
+import App from './App'
 
 // Utilizar el componente
-ReactDom.render(<h1>Hola Mundo</h1>,
+ReactDom.render(<App/>,
   document.getElementById('root')) 
