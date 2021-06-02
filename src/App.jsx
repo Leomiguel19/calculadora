@@ -7,15 +7,10 @@ import './App.css'
 
 // Función flecha o Arrow Function
 const App = () => {
-  const arrayTextoFuncionModificarTexto = useState("")
-  // arrayTextoFuncionModificarTexto => ["hola", funcion]
-
+  //Array destructuring
   // 1er posición: valor (que inicialmente es el valor por defecto)
-  const texto = arrayTextoFuncionModificarTexto[0]
-
   // 2da posicion: funcion que me va a permitir modificar el valor por defecto
-  const funcionModificaTexto = arrayTextoFuncionModificarTexto[1]
-
+  const [texto, funcionModificaTexto] = useState("")
 
   // Lo que ejecuta la función
   console.log("Renderizacion de la app")
