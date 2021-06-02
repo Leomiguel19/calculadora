@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Functions from './components/Functions'
 import MathOperations from './components/MathOperations'
 import Numbers from './components/Numbers'
@@ -7,6 +7,16 @@ import './App.css'
 
 // Función flecha o Arrow Function
 const App = () => {
+  const arrayTextoFuncionModificarTexto = useState("hola")
+  // arrayTextoFuncionModificarTexto => ["hola", funcion]
+
+  // 1er posición: valor (que inicialmente es el valor por defecto)
+  const texto = arrayTextoFuncionModificarTexto[0]
+
+  // 2da posicion: funcion que me va a permitir modificar el valor por defecto
+  const funcionModificaTexto = arrayTextoFuncionModificarTexto[1]
+
+  
   // Lo que ejecuta la función
   return (
     <main className="react-calculator">
