@@ -10,17 +10,17 @@ const App = () => {
   //Array destructuring
   // 1er posición: valor (que inicialmente es el valor por defecto)
   // 2da posicion: funcion que me va a permitir modificar el valor por defecto
-  const [texto, funcionModificaTexto] = useState("")
+  const [stack, setStack] = useState("")
 
   // Lo que ejecuta la función
   console.log("Renderizacion de la app")
   return (
     <main className="react-calculator">
-      <Result value={texto}/>
+      <Result value={stack}/>
       <Numbers
         onClickNumber={number =>
         //console.log("Click en el número: ", number),
-        funcionModificaTexto(number)
+        setStack(number)
         }
       />
       <Functions 
