@@ -1,5 +1,6 @@
 /* eslint no-eval: 0 */ 
 import React, {useState} from 'react'
+import words from 'lodash.words'
 import Functions from './components/Functions'
 import MathOperations from './components/MathOperations'
 import Numbers from './components/Numbers'
@@ -13,8 +14,9 @@ const App = () => {
   // 2da posicion: funcion que me va a permitir modificar el valor por defecto
   const [stack, setStack] = useState("")
 
+  const items = words(stack, /[^-^+^*^/]+/g)
   // Lo que ejecuta la función
-  console.log("Renderizacion de la app")
+  console.log("Renderizacion de la app", items)
   return (
     <main className="react-calculator">
       <Result value={stack}/>
