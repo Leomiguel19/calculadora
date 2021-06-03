@@ -15,11 +15,15 @@ const App = () => {
   const [stack, setStack] = useState("")
 
   const items = words(stack, /[^-^+^*^/]+/g)
+  // Es similar a un if
+  // (esVerdadero) ? (resultadoPorVerdadero) : (resultadoPorFalso)
+  const value = items.length > 0 ? items[items.length-1]: "0";
+    
   // Lo que ejecuta la función
-  console.log("Renderizacion de la app", items)
+  console.log("Renderizacion de la app", value)
   return (
     <main className="react-calculator">
-      <Result value={items[items.length-1]}/>
+      <Result value={value}/>
       <Numbers
         onClickNumber={number =>
         //console.log("Click en el número: ", number),
