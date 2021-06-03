@@ -20,7 +20,7 @@ const App = () => {
       <Numbers
         onClickNumber={number =>
         //console.log("Click en el número: ", number),
-        setStack(number)
+        setStack(stack + number)
         }
       />
       <Functions 
