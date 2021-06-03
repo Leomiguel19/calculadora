@@ -7,36 +7,21 @@ import Numbers from './components/Numbers'
 import Result from './components/Result'
 import './App.css'
 
-// Función flecha o Arrow Function
 const App = () => {
-  //Array destructuring
-  // 1er posición: valor (que inicialmente es el valor por defecto)
-  // 2da posicion: funcion que me va a permitir modificar el valor por defecto
   const [stack, setStack] = useState("")
 
   const items = words(stack, /[^-^+^*^/]+/g)
-  // Es similar a un if
-  // (esVerdadero) ? (resultadoPorVerdadero) : (resultadoPorFalso)
+
   const value = items.length > 0 ? items[items.length-1]: "0";
     
-  // Lo que ejecuta la función
-  console.log("Renderizacion de la app", value)
   return (
     <main className="react-calculator">
       <Result value={value}/>
       <Numbers
-        onClickNumber={number =>
-        //console.log("Click en el número: ", number),
-        setStack(`${stack}${number}`)
-        }
-      />
+        onClickNumber={number => setStack(`${stack}${number}`)} />
       <Functions 
-        onContentClear={() =>
-          //console.log("Content clear")
-          setStack('')
-        }
+        onContentClear={() => setStack('')}
         onDelete={() => {
-          //console.log("OnDelete")
           if(stack.length > 0){
             const newStack = stack.substring(0, stack.length -1)
             setStack(newStack)
@@ -44,14 +29,8 @@ const App = () => {
         }}
       />
       <MathOperations 
-        onClickOperation={operation => 
-          //console.log("Operations: ", operation)  
-          setStack(`${stack}${operation}`)
-        }
-        onClickEqual={equal => 
-          //console.log("Equal: ", equal)  
-          setStack(eval(stack).toString())
-        }
+        onClickOperation={operation => setStack(`${stack}${operation}`)}
+        onClickEqual={equal => setStack(eval(stack).toString())}
       />
     </main>)
 }
