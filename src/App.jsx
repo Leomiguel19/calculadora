@@ -19,7 +19,7 @@ const App = () => {
   console.log("Renderizacion de la app", items)
   return (
     <main className="react-calculator">
-      <Result value={stack}/>
+      <Result value={items[items.length-1]}/>
       <Numbers
         onClickNumber={number =>
         //console.log("Click en el número: ", number),
