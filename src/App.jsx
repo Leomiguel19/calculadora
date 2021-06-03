@@ -1,3 +1,4 @@
+/* eslint no-eval: 0 */ 
 import React, {useState} from 'react'
 import Functions from './components/Functions'
 import MathOperations from './components/MathOperations'
